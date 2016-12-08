@@ -46,6 +46,16 @@ public class User extends Model {
         return find.where().eq("email", email).eq("password", password).findUnique();
     }
 
+
+    // Check if a user is logged in (by id - email address)
+    public static User getUserById(String id) {
+        if (id == null)
+            return null;
+        else
+            // Find user by id and return object
+            return find.byId(id);
+    }
+    
     public String getEmail() {
         return email;
     }

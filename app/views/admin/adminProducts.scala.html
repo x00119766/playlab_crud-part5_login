@@ -1,19 +1,19 @@
 @(products: List[models.Product], categories: List[models.Category], user: models.users.User)
 
 <!-- Pass page title and content {html between braces} to the main view -->
-@main("Products", user) {
+@admin.adminMain("Products", user) {
   <!-- HTML content for the index view -->
   <div class="row">
       <div class="col-sm-2">
           <h4>Categories</h4>
             <div class="list-group">
                 <!-- A link to display all products -->
-                <a href="@routes.HomeController.products(0)" class="list-group-item">All categories</a>
+                <a href="@routes.AdminController.products(0)" class="list-group-item">All categories</a>
 
                 <!-- Start of For loop - For each c in categories add a list item -->
                 <!-- Also show the number of products in each category -->
                 @for(c <- categories) {
-                    <a href="@routes.HomeController.products(c.getId)" class="list-group-item">@c.getName
+                    <a href="@routes.AdminController.products(c.getId)" class="list-group-item">@c.getName
                       <span class="badge">@c.getProducts.size()</span>
                     </a>
                 }
@@ -52,12 +52,12 @@
 
                   <!-- Edit product button -->
                   <td>
-                      <a href="@routes.HomeController.updateProduct(p.getId)" class="btn-xs btn-danger">
+                      <a href="@routes.AdminController.updateProduct(p.getId)" class="btn-xs btn-danger">
                       <span class="glyphicon glyphicon-pencil"></span></a>
                   </td>
                   <!-- Delete product button -->
                   <td>
-                      <a href="@routes.HomeController.deleteProduct(p.getId)" class="btn-xs btn-danger"
+                      <a href="@routes.AdminController.deleteProduct(p.getId)" class="btn-xs btn-danger"
                         onclick="return confirmDel();">
                         <span class="glyphicon glyphicon-trash"></span>
                       </a>
@@ -67,7 +67,7 @@
           </tbody>
         </table>
         <p>
-          <a href="@routes.HomeController.addProduct()">
+          <a href="@routes.AdminController.addProduct()">
             <button class="btn btn-primary">Add a Product</button>
           </a>
         </p>

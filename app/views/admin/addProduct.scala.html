@@ -2,11 +2,11 @@
 
 @import helper._
 
-@(addProductForm: Form[models.Product])
+@(addProductForm: Form[models.Product], user: models.users.User)
 
 @* helpers will be used to create the form dynamically, though static HTML form element also work. *@
 
-@main("Add Product") {
+@main("Add Product", user) {
 	<h3>Add a new Product</h3>
 	
 	<!-- Use the views.html.helpers package to create the form -->

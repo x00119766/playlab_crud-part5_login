@@ -23,3 +23,9 @@ insert into product (id,category_id,name,description,stock,price) values ( 9,3,'
 insert into product (id,category_id,name,description,stock,price) values ( 10,5,'Oven','Oven + Grill,Stainless Steel',10,399.00 );
 insert into product (id,category_id,name,description,stock,price) values ( 11,4,'Bed','Super King size,super comfort mattress',5,899.00 );
 insert into product (id,category_id,name,description,stock,price) values ( 12,2,'Learning JavaScript','Become a JavaScript expert in 2 hours!',50,29.00 );
+
+insert into user (email,name,password,role) values ( 'admin@products.com', 'Alice Admin', 'password', 'admin' );
+
+insert into user (email,name,password,role) values ( 'manager@products.com', 'Bob Manager', 'password', 'manager' );
+
+insert into user (email,name,password,role) values ( 'customer@products.com', 'Charlie Customer', 'password', 'customer' );
